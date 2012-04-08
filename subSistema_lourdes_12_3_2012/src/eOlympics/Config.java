@@ -12,6 +12,7 @@ import javax.swing.UnsupportedLookAndFeelException;
 
 /**
  *
+ * @author Juan Carlos
  */
 public class Config {
 
