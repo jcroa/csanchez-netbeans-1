@@ -3,6 +3,7 @@ package ejemplos;
 import eOlympics.Config;
 import eOlympics.ui.CellRendererNormal;
 import ejemplos.modeloDatos.ModeloInscripcion;
+import ejemplos.modeloDatos.ModeloPruebasRealizar;
 import javax.swing.JTable;
 import javax.swing.table.TableColumn;
 import javax.swing.DefaultCellEditor;
@@ -15,12 +16,12 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.table.TableModel;
 
-public class TablaInscripciones extends JTable {
+public class TablaPruebasARealizar extends JTable {
     private boolean DEBUG = true;
 
-    public TablaInscripciones() {
+    public TablaPruebasARealizar() {
 
-        TableModel myModel = new ModeloInscripcion();
+        TableModel myModel = new ModeloPruebasRealizar();
         this.setModel(myModel);
         this.setPreferredScrollableViewportSize(new Dimension(500, 70));
 
@@ -59,7 +60,8 @@ public class TablaInscripciones extends JTable {
             "pppppppp prueba ",
             "303030 20120101",
             "apapapapapapapepeldios",
-            "nombre nombre "};
+            "nombre nombre ",
+            "nnnnn"};
 
         int cc = this.getColumnModel().getColumnCount();
         
@@ -89,31 +91,7 @@ public class TablaInscripciones extends JTable {
         }
     } 
 
-    private void PonerComboEnColumna(TableColumn sportColumn) {
-        //Set up the editor for the sport cells.
-        JComboBox comboBox = new JComboBox();
-        comboBox.addItem("Snowboarding");
-        comboBox.addItem("Rowing");
-        comboBox.addItem("Chasing toddlers");
-        comboBox.addItem("Speed reading");
-        comboBox.addItem("Teaching high school");
-        comboBox.addItem("None");
-        sportColumn.setCellEditor(new DefaultCellEditor(comboBox));
-
-        //Set up tool tips for the sport cells.
-        DefaultTableCellRenderer renderer =
-                new DefaultTableCellRenderer();
-        renderer.setToolTipText("Click for combo box");
-        sportColumn.setCellRenderer(renderer);
-
-        //Set up tool tip for the sport column header.
-        TableCellRenderer headerRenderer = sportColumn.getHeaderRenderer();
-        if (headerRenderer instanceof DefaultTableCellRenderer) {
-            ((DefaultTableCellRenderer)headerRenderer).setToolTipText(
-                     "Click the sport to see a list of choices");
-        } 
-    }
-
+  
 
     public static void main(String[] args) {
 
@@ -121,7 +99,7 @@ public class TablaInscripciones extends JTable {
 
         JFrame frame = new JFrame();
 
-        TablaInscripciones table = new TablaInscripciones();
+        TablaPruebasARealizar table = new TablaPruebasARealizar();
         //Create the scroll pane and add the table to it.
         JScrollPane scrollPane = new JScrollPane(table);
         //Add the scroll pane to this window.

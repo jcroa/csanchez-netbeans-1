@@ -17,19 +17,13 @@ package eOlympics;
  */
 public class CuestionarioFrame extends javax.swing.JFrame {
 
-    PruebaPanel pp;
-
+    PanelListaRespuestas pp;
     /** Creates new form RealizarPrueba */
-    public CuestionarioFrame(int numPreguntas) {
-        initComponents();
-        pp = new PruebaPanel();
-        pp.setNumRespuestas(numPreguntas);
-        this.jPanelCentral.add(pp);
-    }
-
-    /** Construye un custionario de 8 preguntas */
     public CuestionarioFrame() {
-        this(8);
+        initComponents();
+        pp = new PanelListaRespuestas();
+        pp.setNumRespuestas(8);
+        this.jPanelCentral.add(pp);
     }
 
     /** This method is called from within the constructor to
@@ -40,9 +34,9 @@ public class CuestionarioFrame extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        bindingGroup = new org.jdesktop.beansbinding.BindingGroup();
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -55,8 +49,9 @@ public class CuestionarioFrame extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jPanelCentral = new javax.swing.JPanel();
-        jPanellBotones = new javax.swing.JPanel();
+        jPanelBotones = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -65,12 +60,7 @@ public class CuestionarioFrame extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Prueba Ejemplo Enunciado"));
         jPanel1.setName("jPanel1"); // NOI18N
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("PRUEBA");
-        jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jLabel1.setName("jLabel1"); // NOI18N
+        jPanel1.setPreferredSize(new java.awt.Dimension(628, 120));
 
         jLabel3.setText("Ronda:");
         jLabel3.setName("jLabel3"); // NOI18N
@@ -108,24 +98,33 @@ public class CuestionarioFrame extends javax.swing.JFrame {
         jLabel13.setText("28/03/2012-04/04/2012");
         jLabel13.setName("jLabel13"); // NOI18N
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("PRUEBA 1");
+        jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jLabel1.setName("jLabel1"); // NOI18N
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
+                .addGap(47, 47, 47)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel5)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel3)
-                        .addComponent(jLabel4)))
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
                     .addComponent(jLabel8)
                     .addComponent(jLabel10))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 179, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel6)
+                        .addGap(32, 32, 32)
+                        .addComponent(jLabel11))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -133,29 +132,23 @@ public class CuestionarioFrame extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel13))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel11)))
-                .addGap(166, 166, 166))
+                        .addComponent(jLabel13)))
+                .addGap(48, 48, 48))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(174, 174, 174)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(203, Short.MAX_VALUE))
+                .addGap(236, 236, 236)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(309, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel6)
                             .addComponent(jLabel3)
-                            .addComponent(jLabel11))
+                            .addComponent(jLabel2))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
@@ -165,7 +158,10 @@ public class CuestionarioFrame extends javax.swing.JFrame {
                             .addComponent(jLabel5)
                             .addComponent(jLabel10)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel11))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel7)
                             .addComponent(jLabel12))
@@ -173,31 +169,38 @@ public class CuestionarioFrame extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel9)
                             .addComponent(jLabel13))))
-                .addGap(16, 16, 16))
+                .addGap(240, 240, 240))
         );
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.NORTH);
 
         jPanelCentral.setBorder(javax.swing.BorderFactory.createTitledBorder("Preguntas/Respuestas"));
+        jPanelCentral.setAutoscrolls(true);
         jPanelCentral.setName("jPanelCentral"); // NOI18N
+
+        org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, jPanelCentral, org.jdesktop.beansbinding.ELProperty.create("${autoscrolls}"), jPanelCentral, org.jdesktop.beansbinding.BeanProperty.create("autoscrolls"));
+        bindingGroup.addBinding(binding);
+
         jPanelCentral.setLayout(new java.awt.BorderLayout());
         getContentPane().add(jPanelCentral, java.awt.BorderLayout.CENTER);
 
-        jPanellBotones.setName("jPanellBotones"); // NOI18N
+        jPanelBotones.setName("jPanelBotones"); // NOI18N
 
         jButton1.setText("ENVIAR");
         jButton1.setName("jButton1"); // NOI18N
-        jPanellBotones.add(jButton1);
+        jPanelBotones.add(jButton1);
 
         jButton2.setText("LIMPIAR");
         jButton2.setName("jButton2"); // NOI18N
-        jPanellBotones.add(jButton2);
+        jPanelBotones.add(jButton2);
 
         jButton3.setText("CANCELAR");
         jButton3.setName("jButton3"); // NOI18N
-        jPanellBotones.add(jButton3);
+        jPanelBotones.add(jButton3);
 
-        getContentPane().add(jPanellBotones, java.awt.BorderLayout.SOUTH);
+        getContentPane().add(jPanelBotones, java.awt.BorderLayout.SOUTH);
+
+        bindingGroup.bind();
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -231,8 +234,9 @@ public class CuestionarioFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanelBotones;
     private javax.swing.JPanel jPanelCentral;
-    private javax.swing.JPanel jPanellBotones;
+    private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
 
 }
